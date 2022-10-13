@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="Kfragment"
+            type="com.example.room.ui.view.KayitFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".KayitActivity">
+
+        <EditText
+            android:id="@+id/baslik"
+            android:layout_width="413dp"
+            android:layout_height="69dp"
+            android:background="@color/purple_500"
+            android:backgroundTint="@color/purple_500"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="baslik"
+            android:textSize="24dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/icerik"
+            android:layout_width="405dp"
+            android:layout_height="595dp"
+            android:layout_marginBottom="4dp"
+            android:background="@color/purple_500"
+            android:backgroundTint="@color/purple_500"
+            android:text="icerik"
+            android:textColor="@color/black"
+            android:textSize="23dp"
+            app:layout_constraintBottom_toTopOf="@+id/save"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/save"
+            android:layout_width="411dp"
+            android:textColor="@color/black"
+            android:layout_height="53dp"
+            android:layout_marginBottom="4dp"
+            android:onClick="@{ ()->Kfragment.kayit(baslik.getText().toString(),icerik.getText().toString()) }"
+            android:text="Kaydet"
+            app:layout_constraintBottom_toBottomOf="parent"
+            tools:layout_editor_absoluteX="2dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
